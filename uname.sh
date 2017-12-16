@@ -16,11 +16,17 @@ if [ -z "$1" ]
      exit 1
    fi
 fi
-
+x="0"
 while IFS=: read -r f1 f2 f3 f4 f5 f6 f7
 do
  if [ "$f1" == "$2" ]
  then
   echo "$f5"
- fi
+  x="1"
+  fi
 done<"$file"
+if [ "$x" -ne "1" ]
+then echo "Invalid Username"
+fi
+
+
