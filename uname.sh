@@ -1,4 +1,10 @@
 #!/bin/bash
+temp=`cat $1 2>/dev/null`
+if [ "$?" -ne "0" ]
+then
+exit 1
+fi
+
 file="$1"
 j=`echo $1 | tail -c 5`
 if [ -z "$1" ]
